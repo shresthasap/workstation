@@ -14,5 +14,8 @@ package 'emacs'
 
 template 'etc/motd' do
   source 'motd.erb'
+  variables(
+    :name => 'Sanjaya'
+  )
   action :create
 end
