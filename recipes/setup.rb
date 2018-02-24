@@ -7,8 +7,12 @@ package 'git'
 package 'ntp'
 package 'emacs'
 
-file 'etc/motd' do
-  content 'This server is the property of Sanjaya'
-  owner 'root'
-  group 'root'
+#node['ipaddress']
+#node['memory']['total']
+
+#motd = message of the day
+
+template 'etc/motd' do
+  source 'motd.erb'
+  action :create
 end
